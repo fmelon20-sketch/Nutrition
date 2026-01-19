@@ -316,19 +316,10 @@ async def add_food(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global last_entry
 
     if not context.args or len(context.args) < 1:
-        msg = """━━━━━━━━━━━━━━━━━━━━━━
-📝  **AJOUTER**
-━━━━━━━━━━━━━━━━━━━━━━
+        msg = """📝 **Ajouter**
 
-**Mode 1: Ajout rapide**
-Ajoute directement au journal du jour:
-`/add 30g 150kcal 10p 5l 8g`
-→ 30g avec 150kcal, 10g prot, 5g lip, 8g gluc
-
-**Mode 2: Sauvegarder aliment**
-Ajoute à la base pour réutilisation:
-`/add galette de riz|380|8|2|82`
-→ Valeurs pour 100g"""
+**Ajout rapide:** `/add 150kcal 10p 5l 8g`
+**Sauvegarder:** `/add nom|kcal|prot|lip|gluc`"""
         await update.message.reply_text(msg, parse_mode='Markdown')
         return
 
